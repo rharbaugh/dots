@@ -1,6 +1,7 @@
 {pkgs, ...}: {
 	imports = [
 		../../home/core.nix
+		../../home/hypr
 	];
 	
 	programs.git = {
