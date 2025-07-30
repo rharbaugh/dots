@@ -73,7 +73,7 @@
 			PasswordAuthentication = false;
 		};
 		openFirewall = true;
-	}
+	};
 
 	environment.systemPackages = with pkgs; [
 		vim
