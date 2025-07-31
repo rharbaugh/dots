@@ -7,6 +7,9 @@
 
 	environment.systemPackages = [
 		pkgs.ghostty
+		eza
+		direnv
+		bat
 	];
 
 	#this yells at electron apps to make them want to use wayland

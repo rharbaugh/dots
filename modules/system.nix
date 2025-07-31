@@ -4,6 +4,9 @@
 	username,
 	...
 }: {
+	imports = [
+		./hypr.nix
+	];
 	users.users.${username} = {
 		isNormalUser = true;
 		description = username;
