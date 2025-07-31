@@ -4,6 +4,8 @@
 	...
 }: {
 	home.packages = with pkgs; [
-		omnissa-horizon-client
+		discord
+		yubioath-flutter
+		weechat
 	];
 }

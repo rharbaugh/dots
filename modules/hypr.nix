@@ -7,9 +7,18 @@
 
 	environment.systemPackages = [
 		pkgs.ghostty
-		eza
-		direnv
-		bat
+		pkgs.eza
+		pkgs.direnv
+		pkgs.bat
+		pkgs.hyprshot
+		pkgs.hyprlock
+		pkgs.hypridle
+		pkgs.hyprpaper
+		pkgs.hyprsunset
+		pkgs.hyprcursor
+		pkgs.dunst
+		pkgs.xdg-desktop-portal-hyprland
+		pkgs.hyprpolkitagent
 	];
 
 	#this yells at electron apps to make them want to use wayland

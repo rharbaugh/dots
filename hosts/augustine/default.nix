@@ -26,5 +26,10 @@
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
+
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "libxml2-2.13.8"
+  ];
 }
 

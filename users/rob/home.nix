@@ -1,6 +1,7 @@
 {pkgs, ...}: {
 	imports = [
 		../../home/core.nix
+		../../home/packages.nix
 		../../home/hypr
 		../../home/ghostty
 		../../home/nvim

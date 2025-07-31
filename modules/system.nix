@@ -92,6 +92,10 @@
 		neovim
 		keychain
 		tree
+		unzip
+		gcc
+		rustup
+		go
 	];
 
 	programs.firefox = {
