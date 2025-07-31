@@ -38,7 +38,6 @@
 						}
 					];
 				};
-			};
 			benedict = let
 				username = "rob";
 				specialArgs = {inherit username;};
