@@ -5,6 +5,8 @@
 		../../home/ghostty
 		../../home/nvim
 		../../home/zsh
+		../../home/work
+		../../home/dev
 	];
 	
 	programs.git = {
