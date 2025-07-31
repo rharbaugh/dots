@@ -4,6 +4,7 @@
 		../../home/hypr
 		../../home/ghostty
 		../../home/nvim
+		../../home/zsh
 	];
 	
 	programs.git = {

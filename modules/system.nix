@@ -8,6 +8,7 @@
 		isNormalUser = true;
 		description = username;
 		extraGroups = ["networkmanager" "wheel"];
+		shell = pkgs.zsh;
 	};
 	nix.settings = {
 		trusted-users = [username];
@@ -63,6 +64,7 @@
 	};
 
 	programs.dconf.enable = true;
+	programs.zsh.enable = true;
 
 	networking.firewall.enable = false;
 
