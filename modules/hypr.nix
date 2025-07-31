@@ -1,6 +1,9 @@
 {pkgs, ...}: {
 	#hyprland stuff
-	programs.hyprland.enable = true;
+	programs.hyprland = {
+		enable = true;
+		xwayland.enable = true;
+	};
 
 	environment.systemPackages = [
 		pkgs.ghostty
