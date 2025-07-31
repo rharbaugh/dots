@@ -89,6 +89,10 @@
 		tree
 	];
 
+	programs.firefox = {
+		enable = true;
+	};
+
 	services.pulseaudio.enable = false;
 	services.power-profiles-daemon = {
 		enable = true;
