@@ -13,35 +13,40 @@
 		extraGroups = ["networkmanager" "wheel"];
 		shell = pkgs.zsh;
 	};
-	nix.settings = {
-		trusted-users = [username];
-		experimental-features = [ "nix-command" "flakes"];
-	};
-	nix.gc = {
-		automatic = lib.mkDefault true;
-		dates = lib.mkDefault "weekly";
-		options = lib.mkDefault "--delete-older-than 7d";
+
+	nix = {
+		settings = {
+			trusted-users = [username];
+			experimental-features = [ "nix-command" "flakes"];
+		};
+		gc = {
+			automatic = lib.mkDefault true;
+			dates = lib.mkDefault "weekly";
+			options = lib.mkDefault "--delete-older-than 7d";
+		};
 	};
 
 	nixpkgs.config.allowUnfree = true;
 
 	time.timeZone = "US/Eastern";
 
-	i18n.defaultLocale = "en_US.UTF-8";
-
-	i18n.extraLocaleSettings = {
-		LC_ADDRESS = "en_US.UTF-8";
-		LC_IDENTIFICATION = "en_US.UTF-8";
-		LC_MEASUREMENT = "en_US.UTF-8";
-		LC_MONETARY = "en_US.UTF-8";
-		LC_NAME = "en_US.UTF-8";
-		LC_NUMERIC = "en_US.UTF-8";
-		LC_PAPER = "en_US.UTF-8";
-		LC_TELEPHONE = "en_US.UTF-8";
-		LC_TIME = "en_US.UTF-8";
+	i18n = {
+		defaultLocale = "en_US.UTF-8";
+		extraLocaleSettings = {
+			LC_ADDRESS = "en_US.UTF-8";
+			LC_IDENTIFICATION = "en_US.UTF-8";
+			LC_MEASUREMENT = "en_US.UTF-8";
+			LC_MONETARY = "en_US.UTF-8";
+			LC_NAME = "en_US.UTF-8";
+			LC_NUMERIC = "en_US.UTF-8";
+			LC_PAPER = "en_US.UTF-8";
+			LC_TELEPHONE = "en_US.UTF-8";
+			LC_TIME = "en_US.UTF-8";
+		};
 	};
 
-	services.printing.enable = true;
+	security.polkit.enable = true;
+	networking.firewall.enable = false;
 
 	hardware.bluetooth = {
 		enable = true;
@@ -52,9 +57,52 @@
 			};
 		};
 	};
-	services.blueman.enable = true;
 
-	services.pcscd.enable = true;
+	services = {
+		#printing
+		printing.enable = true;
+		#bluetooth stuff
+		blueman.enable = true;
+		#yubikey stuff
+		pcscd.enable = true;
+		#ssh
+		openssh = {
+			enable = true;
+			settings = {
+				PermitRootLogin = "no";
+				PasswordAuthentication = true;
+			};
+			openFirewall = true;
+		};
+		#flatpak
+		flatpak.enable = true;
+
+		#for laptops, mostly
+		power-profiles-daemon = {
+			enable = true;
+		};
+
+		#location service
+		geoclue2.enable = true;
+
+		#sound
+		pulseaudio.enable = false;
+		pipewire = {
+			enable = true;
+			alsa.enable = true;
+			alsa.support32Bit = true;
+			pulse.enable = true;
+			jack.enable = true;
+		};
+	};
+
+	programs = {
+		dconf.enable = true;
+		zsh.enable = true;
+		firefox = {
+			enable = true;
+		};
+	};
 
 	fonts = {
 		packages = with pkgs; [
@@ -80,20 +128,6 @@
 		#    };
 	};
 
-	programs.dconf.enable = true;
-	programs.zsh.enable = true;
-
-	networking.firewall.enable = false;
-
-	services.openssh = {
-		enable = true;
-		settings = {
-			PermitRootLogin = "no";
-			PasswordAuthentication = true;
-		};
-		openFirewall = true;
-	};
-
 	environment.systemPackages = with pkgs; [
 		vim
 		wget
@@ -110,29 +144,6 @@
 		gcc
 		rustup
 		go
+		btop
 	];
-
-	programs.firefox = {
-		enable = true;
-	};
-
-	services.pulseaudio.enable = false;
-	services.power-profiles-daemon = {
-		enable = true;
-	};
-
-	security.polkit.enable = true;
-
-	services = {
-		geoclue2.enable = true;
-
-		pipewire = {
-			enable = true;
-			alsa.enable = true;
-			alsa.support32Bit = true;
-			pulse.enable = true;
-			jack.enable = true;
-		};
-
-	};
 }
