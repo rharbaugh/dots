@@ -43,6 +43,8 @@
 
 	services.printing.enable = true;
 
+	services.pcscd.enable = true;
+
 	fonts = {
 		packages = with pkgs; [
 			material-design-icons

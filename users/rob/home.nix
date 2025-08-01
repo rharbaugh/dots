@@ -3,6 +3,7 @@
 		../../home/core.nix
 		../../home/packages.nix
 		../../home/hypr
+		../../home/waybar
 		../../home/ghostty
 		../../home/nvim
 		../../home/zsh
