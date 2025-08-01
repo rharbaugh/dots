@@ -3,7 +3,7 @@
 	config,
 	...
 }: {
-	home.file.".config/hypr" = {
+	home.file.".config/waybar" = {
 		source = ../../dotfiles/waybar;
 		recursive = true;
 	};
