@@ -17,6 +17,11 @@
 		source = ../../dotfiles/wofi;
 		recursive = true;
 	};
+
+	home.file.".local/share/icons" = {
+		source = ../../dotfiles/icons;
+		recursive = true;
+	};
 	#stuff required to run hyprland
 	home.packages = with pkgs; [
 	];

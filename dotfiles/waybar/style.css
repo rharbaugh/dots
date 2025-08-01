@@ -1,8 +1,8 @@
 * {
   /* `otf-font-awesome` is required to be installed for icons */
-  font-family: "Hack Nerd Font Mono";
+  font-family: "Noto Sans CJK KR Regular";
   /*font-family: "D2CodingLigature Nerd Mono";*/
-  font-size: 14px;
+  font-size: 13px;
   min-height: 0;
 }
 
