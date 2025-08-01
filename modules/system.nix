@@ -61,6 +61,12 @@
 	services = {
 		#printing
 		printing.enable = true;
+		#avahi for printer discovery
+		avahi = {
+			enable = true;
+			nssmdns4 = true;
+			openFirewall = true;
+		};
 		#bluetooth stuff
 		blueman.enable = true;
 		#yubikey stuff
@@ -101,6 +107,10 @@
 		zsh.enable = true;
 		firefox = {
 			enable = true;
+		};
+		steam = {
+			enable = true;
+			localNetworkGameTransfers.openFirewall = true;
 		};
 	};
 
