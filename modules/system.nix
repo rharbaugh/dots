@@ -43,11 +43,23 @@
 
 	services.printing.enable = true;
 
+	hardware.bluetooth = {
+		enable = true;
+		powerOnBoot = true;
+		settings = {
+			General = {
+				Experimental = true;
+			};
+		};
+	};
+	services.blueman.enable = true;
+
 	services.pcscd.enable = true;
 
 	fonts = {
 		packages = with pkgs; [
 			material-design-icons
+			font-awesome
 
 			noto-fonts
 			noto-fonts-cjk-sans
