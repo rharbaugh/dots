@@ -155,5 +155,6 @@
 		rustup
 		go
 		btop
+		networkmanagerapplet
 	];
 }

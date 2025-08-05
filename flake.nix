@@ -18,7 +18,8 @@
 		nixosConfigurations = {
 			augustine = let
 				username = "rob";
-				specialArgs = {inherit username;};
+				hostname = "augustine";
+				specialArgs = {inherit username; inherit hostname;};
 			in
 				nixpkgs.lib.nixosSystem {
 					inherit specialArgs;
@@ -40,7 +41,8 @@
 				};
 			benedict = let
 				username = "rob";
-				specialArgs = {inherit username;};
+				hostname = "benedict";
+				specialArgs = {inherit username; inherit hostname;};
 			in
 				nixpkgs.lib.nixosSystem {
 					inherit specialArgs;
