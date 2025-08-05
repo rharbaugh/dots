@@ -46,7 +46,11 @@
 	};
 
 	security.polkit.enable = true;
-	networking.firewall.enable = false;
+	networking.firewall = {
+		enable = true;
+		checkReversePath = false;
+		allowedUDPPorts = [ 51820 ];
+	};
 
 	hardware.bluetooth = {
 		enable = true;
