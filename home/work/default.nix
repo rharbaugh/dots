@@ -1,9 +1,0 @@
-{
-	pkgs,
-	config,
-	...
-}: {
-	home.packages = with pkgs; [
-		omnissa-horizon-client
-	];
-}
