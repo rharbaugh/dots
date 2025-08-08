@@ -7,5 +7,8 @@
 		discord
 		yubioath-flutter
 		weechat
+		gimp
+		vlc
+		ffmpeg
 	];
 }
