@@ -1,2 +1,2 @@
-# nixos-configs
-Nixos flake for personal desktop/laptop
+#dots
+Config files for editor and shell
